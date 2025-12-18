@@ -8,7 +8,7 @@ export async function POST(req){
         if(!user){
             return Response.json({
                 success : false,
-                error : "No authenticated user found"
+                message : "No authenticated user found"
             },{status : 401})
         }
         const {id,firstName,lastName,imageUrl,emailAddresses}=user
@@ -40,6 +40,6 @@ export async function POST(req){
         return Response.json({
             success : false,
             error : "Failed to onboard user"
-        },{status : 400})
+        },{status : 500})
     }
 }
